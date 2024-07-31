@@ -11,33 +11,28 @@ public class Main {
     public static void main(String[] args) {
         ProductosServicios ServicioProducto=new ProductosServicios();
         DescuentosServicios ServicioDescuento=new DescuentosServicios();
-        Scanner SCANNER=new Scanner(System.in);
+        Scanner scanner=new Scanner(System.in);
         System.out.println("Ingrese el ID de un producto");
-        int Id= SCANNER.nextInt();
+        int Id= scanner.nextInt();
 
 
         while(Id !=0){
             System.out.println("Ingrese el ID de un descuento");
-            int Id_Descuento= SCANNER.nextInt();
+            int Id_Descuento=scanner.nextInt();
 
             // Retornar productos con y sin descuento;
             List<Producto>RetornarProductoConYSinDescuento=ServicioProducto.ObtenerProductosConYSinDescuento();
-            RetornarProductoConYSinDescuento.forEach(producto -> System.out.println(producto.getId()));
-            RetornarProductoConYSinDescuento.forEach(producto -> System.out.println(producto.getNombre()));
-            RetornarProductoConYSinDescuento.forEach(producto -> System.out.println(producto.getPrecio()));
+            RetornarProductoConYSinDescuento.forEach(producto -> System.out.println("ID: " + producto.getId() + ",Nombre: " + producto.getNombre() + ", Precio: " + producto.getPrecio()));
+
 
             // Retornar productos sin descuentos
             List<Producto>RetornarProductosSinDescuentos=ServicioProducto.ObtenerProductosSinNingunDescuento();
-            RetornarProductosSinDescuentos.forEach(producto -> System.out.println(producto.getId()));
-            RetornarProductosSinDescuentos.forEach(producto -> System.out.println(producto.getNombre()));
-            RetornarProductosSinDescuentos.forEach(producto -> System.out.println(producto.getPrecio()));
+            RetornarProductoConYSinDescuento.forEach(producto -> System.out.println("ID: " + producto.getId() + ",Nombre: " + producto.getNombre() + ", Precio: " + producto.getPrecio()));
 
             //Retornar productos con más de 1 descuento
-            List<Producto>RetornarProductosConMasDescuentos=ServicioProducto.ObtenerProductoConMasDeUnDescuento();
-            RetornarProductosConMasDescuentos.forEach(producto -> System.out.println(producto.getId()));
-            RetornarProductosConMasDescuentos.forEach(producto -> System.out.println(producto.getNombre()));
-            RetornarProductosConMasDescuentos.forEach(producto -> System.out.println(producto.getNombre()));
-            Id = SCANNER.nextInt();
+            RetornarProductoConYSinDescuento.forEach(producto -> System.out.println("ID: " + producto.getId() + ",Nombre: " + producto.getNombre() + ", Precio: " + producto.getPrecio()));
+
+            Id = scanner.nextInt();
             System.out.println("Ingrese el ID de un descuento");
         }
         }

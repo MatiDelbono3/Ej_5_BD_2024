@@ -3,6 +3,7 @@ package org.example.Servicios;
 import org.example.Dto.Producto;
 import org.example.conexiones.HibernateUtil;
 import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 import java.util.ArrayList;
 import java.util.List;
